@@ -1,0 +1,39 @@
+<meta charset="UTF-8">
+
+
+<h1>PROGRAMA JUEGO DE ADIVINACION</h1>
+
+
+<script>
+       
+    var saltolinea3= "<br><br><br>"
+
+    function saltarlinea() {
+
+        document.write(saltolinea3);
+    }
+    
+    function imprimir(frase) {
+
+        document.write(frase);
+        saltarlinea()
+
+    }
+
+    var  numeroPensado= Math.round(Math.random()*10);
+    var numeroLanzado = parseInt (prompt("Ingrese un numero entre 0 y 10"));
+
+    if (numeroPensado !=numeroLanzado){
+        imprimir("usted erro, el numero pesado era "+numeroPensado);
+    }
+    //if (numeroPensado ==numeroLanzado){
+        else{
+        imprimir("usted acerto!!!, el numero pesado era "+numeroPensado);
+    }
+
+
+
+
+
+
+</script>
