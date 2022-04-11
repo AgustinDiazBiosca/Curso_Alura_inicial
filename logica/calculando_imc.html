@@ -60,6 +60,19 @@
     imcCalculado=calcularImcR(pesoImformado,alturaImfornado);
     imprimir(nombre+" su promedio del IMC calculado es: " + imcCalculado);
 
+    if( imcCalculado < 18.5){
+        imprimir("IMC abajo de lo recomendado");
+    }
+    if( imcCalculado >= 18.5 &&  imcCalculado <= 24.9){
+        imprimir("IMC en el intervalo normal");
+    }
+    if( imcCalculado > 25){
+        imprimir("IMC considerado sobrepeso");
+    }
+    if( imcCalculado >= 30){
+        imprimir("IMC considerado como obesidad");
+    }
+
 
 
 
