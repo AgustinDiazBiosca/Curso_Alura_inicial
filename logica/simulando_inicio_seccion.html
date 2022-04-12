@@ -1,0 +1,65 @@
+<meta charset="UTF-8">
+
+
+<h1>PROGRAMA SIMULACION DE INICIO DE SECCION</h1>
+
+
+<script>
+       
+    function saltarlinea(num) {
+        
+        for (var saltar=0; saltar<=num; saltar++) {
+        
+        document.write("<br>");
+        }
+    }
+    
+    function imprimir(frase) {
+
+        document.write(frase);
+        saltarlinea(2);
+
+    }
+
+    var inicioDeSesionRegistrado = "alura";
+    var contrasenhaRegistrada = "alura321";
+
+   /*  var inicioDeSesionIngresado = prompt("Ingrese su usuario");
+    var contrasenhaIngresada = prompt("Ingrese su contraseña");
+
+
+    if( inicioDeSesionRegistrado == inicioDeSesionIngresado && contrasenhaRegistrada == contrasenhaIngresada ) {
+        alert("Bienvenido al sistema " + inicioDeSesionIngresado);
+    } else {
+        alert("inicio de sesión inválido. Favor intente de nuevo");
+    } */
+    
+    for(var intentos = 1;intentos <= 3; intentos++){
+
+        var inicioDeSesionIngresado = prompt("Ingrese su usuario");
+        var contrasenhaIngresada = prompt("Ingrese su contraseña");
+
+        if (inicioDeSesionRegistrado == inicioDeSesionIngresado && contrasenhaRegistrada == contrasenhaIngresada){
+            alert("Bienvenido al sistema " + inicioDeSesionIngresado);  
+            imprimir("Ingreso");
+            break;
+
+        }
+        else{
+            alert("inicio de sesión inválido. Favor intente de nuevo");
+            imprimir("Fallo");
+        }
+
+
+
+
+
+    }
+
+
+    imprimir("Fin");
+    
+
+
+
+</script>
