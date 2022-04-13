@@ -1,0 +1,72 @@
+<meta charset="UTF-8">
+
+<h1>RECETAS DE ARMANDO</h1>
+
+
+
+<script>
+       
+    /* var ingredientes = [];
+    var cantidad = parseInt(prompt("¿Cuántos ingredientes vas a añadir?"));
+    var contador = 1;
+
+    while( contador <= cantidad) {
+        var ingrediente = prompt("Informe el ingrediente " + contador);
+        ingredientes.push(ingrediente);
+        contador++;
+    }
+
+    console.log(ingredientes);
+ */
+    var ingredientes = [];
+    var cantidad = parseInt(prompt("¿Cuántos ingredientes vas a añadir?"));
+
+    var encontrado = false;
+    var contador = 1;
+    var texto = "Ingrese el ingrediente: "+contador ;
+    
+    while (contador <= cantidad){
+        console.log(texto);
+        console.log(contador);
+        var ingrediente = prompt(texto);
+                     
+        for(posicion = 0 ; posicion < ingredientes.length ; posicion++){
+            if (ingrediente == ingredientes[posicion]){
+                encontrado= true;
+                
+                console.log(encontrado);
+               // alert("El ingrediente: " + ingrediente+" esta repetido, ponga otro ingrediente.");
+            }
+        
+        }
+
+        if (encontrado==true) {
+            texto="El ingrediente:"+contador+": " + ingrediente+" esta repetido, ponga otro ingrediente.";
+            //contador--;
+            encontrado=false;
+        }
+        else  {
+           ingredientes.push(ingrediente);          
+           contador++
+           texto = "Ingrese el ingrediente: "+contador;
+        }
+    }
+    
+    console.log(ingredientes);
+
+    function saltarlinea(num) {        
+        for (var saltar=0; saltar<=num; saltar++) {
+        document.write("<br>");
+        }
+    }
+    
+    function imprimir(frase) {
+        document.write(frase);
+        saltarlinea(3);
+    }
+
+    for(posicion = 0 ; posicion < ingredientes.length ; posicion++){
+        imprimir(ingredientes[posicion]);
+    }
+
+</script>
