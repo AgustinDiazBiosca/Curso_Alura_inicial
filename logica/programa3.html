@@ -1,34 +1,62 @@
-<canvas width="600" height="400" >
+<canvas width="800" height="800" >
 
 
 </canvas>
 
 
 <script> 
-    var pantalla = document.querySelector("canvas");
-    var pincel = pantalla.getContext("2d");
+    
 
-    pincel.fillStyle = "lightgrey";  //propiedad
-    pincel.fillRect(0,0,600,400); //funcion
+    function dibujarCuadrado(X,Y,color,ancho,altura){ 
+        var pantalla = document.querySelector("canvas");
+        var pincel = pantalla.getContext("2d");
+        pincel.fillStyle = color;  
+        pincel.fillRect(X,Y,ancho,altura); 
+        pincel.strokeStyle = "black";
+        pincel.strokeRect(X,Y,ancho,altura);
+       
+    }
 
-    pincel.fillStyle = "green" ; //propiedad
-    pincel.fillRect(0,0,200,400); //funcion
+    function dibujarVariosRan(X,Y,cantidad){ 
+            var color = "red";
 
-    pincel.fillStyle = "red";  //propiedad
-    pincel.fillRect(400,0,200,400); //funcion
+        for(repetir = 0;repetir < cantidad;repetir++){
+            var radAncho = Math.round(Math.random()*50)+10;
+            var radAlto = Math.round(Math.random()*50)+10;
+            var radColor = Math.round(Math.random()*3);
+            console.log(radColor);
+            if(radColor == 1){ 
+                 color= "red";
+            }
+            if(radColor == 2){ 
+                 color= "yellow";
+            }
+            if(radColor == 3){
+                color= "green";
+            } 
 
-    pincel.fillStyle = "yellow";  //propiedad
-    pincel.beginPath();
-    pincel.moveTo(300,200);
-    pincel.lineTo(200,400);
-    pincel.lineTo(400,400);
-    pincel.fill();
+            dibujarCuadrado(X+50*repetir,Y,color,radAncho,radAlto);
+               
+        } 
+    }
 
-    pincel.fillStyle = "blue";  //propiedad
-    pincel.beginPath();
-    pincel.arc(300,200,100,0,2*Math.PI,true );
-    pincel.fill();
+    dibujarCuadrado (0,150,"red",50,50);
+    dibujarCuadrado (0,200,"yellow",50,50);
+    dibujarCuadrado (0,250,"green",50,50);
 
+    for(repetir = 0;repetir < 10;repetir++){
 
+        dibujarCuadrado (0+50*repetir,300,"red",50,50);
+        dibujarCuadrado (0+50*repetir,350,"yellow",50,50);
+        dibujarCuadrado (0+50*repetir,400,"green",50,50);
+    }
+
+    dibujarVariosRan(0,100,10);
+    dibujarVariosRan(0,50,10);
+    dibujarVariosRan(0,0,10);
+        
+    
+    
+    
 
 </script>
